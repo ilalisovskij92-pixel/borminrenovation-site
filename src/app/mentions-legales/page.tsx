@@ -1,5 +1,6 @@
-// Impressum — юридически обязательная страница для сайтов в Швейцарии (Art. 3 UWG)
-// и EU (TMG § 5 если обслуживает DE). Минимальный набор данных владельца.
+// Mentions légales — page légalement requise en Suisse (LCD art. 3 al. 1 let. s)
+// pour tout site commercial. Doit identifier clairement l'éditeur et permettre
+// un contact rapide.
 
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -7,104 +8,144 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Impressum",
-  description: "Legal information and publisher details for elinatongieva.com.",
+  title: "Mentions légales",
+  description:
+    "Informations légales sur Bormin Rénovation, entreprise indépendante de construction et rénovation basée à Vevey, Suisse.",
   robots: { index: true, follow: true },
 };
 
-export default function ImpressumPage() {
+export default function MentionsLegalesPage() {
   return (
     <>
       <Nav />
       <main className="pt-40 pb-section bg-white">
         <div className="container-premium max-w-3xl">
-          <span className="eyebrow">Legal</span>
-          <h1 className="text-display-lg mt-4 mb-12">Impressum</h1>
+          <span className="eyebrow">Légal</span>
+          <h1 className="text-display-lg mt-4 mb-12">Mentions légales</h1>
 
           <div className="space-y-10 text-ink-soft leading-relaxed">
             <section>
               <h2 className="font-serif text-2xl text-ink mb-3">
-                Responsible for content
+                Responsable de la publication
               </h2>
               <p>
-                Elina Tongieva
+                Bormin Rénovation
                 <br />
-                Life &amp; Business Coach
+                Artem Bormin · Indépendant (raison individuelle)
                 <br />
-                Zurich, Switzerland
+                Rue du Clos 8
+                <br />
+                1800 Vevey, Suisse
               </p>
             </section>
 
             <section>
               <h2 className="font-serif text-2xl text-ink mb-3">Contact</h2>
               <p>
-                Email:{" "}
+                Téléphone :{" "}
                 <a
-                  href="mailto:hello@elinatongieva.com"
-                  className="gold-underline"
+                  href="tel:+41765314652"
+                  className="text-ink hover:text-accent transition-colors"
                 >
-                  hello@elinatongieva.com
+                  +41 76 531 46 52
+                </a>
+                <br />
+                WhatsApp :{" "}
+                <a
+                  href="https://wa.me/41765314652"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-ink hover:text-accent transition-colors"
+                >
+                  +41 76 531 46 52
                 </a>
               </p>
             </section>
 
             <section>
               <h2 className="font-serif text-2xl text-ink mb-3">
-                VAT / Business ID
+                Hébergement du site
               </h2>
               <p>
-                To be added once the VAT registration (UID-Nr.) is issued. Until
-                then no VAT is charged in accordance with Swiss MwSt
-                regulations.
+                Vercel Inc.
+                <br />
+                440 N Barranca Avenue #4133
+                <br />
+                Covina, CA 91723, USA
+                <br />
+                <a
+                  href="https://vercel.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-ink hover:text-accent transition-colors"
+                >
+                  vercel.com
+                </a>
               </p>
             </section>
 
             <section>
               <h2 className="font-serif text-2xl text-ink mb-3">
-                Disclaimer
+                Propriété intellectuelle
               </h2>
-              <p className="mb-4">
-                All content on this website is published in good faith and for
-                general information purposes only. Coaching services are not a
-                substitute for medical, psychological, legal, or financial
-                advice. The author accepts no liability for any damages arising
-                from the use of the information provided.
-              </p>
               <p>
-                External links are provided for convenience. Elina Tongieva
-                assumes no responsibility for the content or availability of
-                external websites.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-2xl text-ink mb-3">Copyright</h2>
-              <p>
-                All texts, images, and graphics on this website are protected by
-                copyright. Any reproduction, distribution, or public
-                availability — in whole or in part — requires prior written
-                consent.
+                L&apos;ensemble du contenu de ce site (textes, images, logo,
+                design) est la propriété de Bormin Rénovation, sauf mention
+                contraire. Toute reproduction, même partielle, est interdite
+                sans autorisation écrite préalable.
               </p>
             </section>
 
             <section>
               <h2 className="font-serif text-2xl text-ink mb-3">
-                Applicable law
+                Limite de responsabilité
               </h2>
               <p>
-                Swiss substantive law applies exclusively. Place of jurisdiction
-                is Zurich, Switzerland.
+                Les informations présentées sur ce site sont fournies à titre
+                indicatif. Bormin Rénovation s&apos;efforce d&apos;assurer leur
+                exactitude mais ne peut garantir l&apos;absence d&apos;erreurs
+                ou d&apos;omissions. Les devis et estimations engageant
+                l&apos;entreprise sont uniquement ceux établis par écrit après
+                visite du chantier.
               </p>
             </section>
 
-            <div className="pt-8 border-t border-line">
-              <Link
-                href="/"
-                className="btn-pill btn-outline"
-              >
-                ← Back to home
-              </Link>
-            </div>
+            <section>
+              <h2 className="font-serif text-2xl text-ink mb-3">
+                Droit applicable
+              </h2>
+              <p>
+                Le présent site et son utilisation sont régis par le droit
+                suisse. Tout litige relève des tribunaux compétents du canton de
+                Vaud.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-serif text-2xl text-ink mb-3">
+                Données personnelles
+              </h2>
+              <p>
+                Pour toute information sur le traitement de vos données
+                personnelles, consultez notre{" "}
+                <Link
+                  href="/politique-de-confidentialite"
+                  className="text-ink hover:text-accent transition-colors underline"
+                >
+                  politique de confidentialité
+                </Link>
+                .
+              </p>
+            </section>
+          </div>
+
+          <div className="mt-16 pt-8 border-t border-line">
+            <Link
+              href="/"
+              className="text-sm font-mono uppercase tracking-[0.15em] text-ink-muted hover:text-accent transition-colors"
+            >
+              ← Retour à l&apos;accueil
+            </Link>
           </div>
         </div>
       </main>
