@@ -1,11 +1,10 @@
-// Logo — official Bormin Rénovation mark, served from /public/logo.svg.
-// The SVG is intrinsically 1500x1500 with a graphite house + ochre arrow
-// and the wordmark "BORMIN RÉNOVATION" baked in. We expose it as a single
-// <Image> wrapper so width/aspect can be controlled per call site.
-//
-// `inverted` swaps the wordmark to cream — useful on the dark Footer.
+// Logo — official Bormin Rénovation mark.
+// Uses a plain <img> (not next/image) because:
+//   1) SVG doesn't benefit from Next.js image optimisation
+//   2) <Image> aggressively caches src; with prop-driven src swap (inverted)
+//      it sometimes serves the wrong file from the build manifest
+// `inverted` swaps the wordmark to cream for use on dark backgrounds.
 
-import Image from "next/image";
 import Link from "next/link";
 
 interface LogoProps {
@@ -35,12 +34,13 @@ export default function Logo({
   const src = inverted ? "/logo-inverted.svg" : "/logo.svg";
 
   const img = (
-    <Image
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      key={src}
       src={src}
       alt={ariaLabel}
       width={width}
       height={computedHeight}
-      priority
       style={{ width: `${width}px`, height: "auto" }}
       className="select-none block"
     />
