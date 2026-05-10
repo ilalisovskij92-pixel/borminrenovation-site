@@ -27,18 +27,16 @@ export default function About() {
         </AnimateOnScroll>
 
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-          {/* Portrait */}
+          {/* Portrait — Artem at Lac Léman, autumn golden hour */}
           <AnimateOnScroll className="lg:col-span-5">
             <div className="relative aspect-[4/5] max-w-md bg-gray-200 overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=800&q=85"
-                alt="Artem Bormin, fondateur de Bormin Rénovation"
+                src="/photos/artem-portrait.jpg"
+                alt="Artem Bormin, fondateur de Bormin Rénovation, devant le Lac Léman"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
-              <div className="absolute -bottom-6 left-0 text-[0.65rem] uppercase tracking-[0.15em] font-mono text-ink-subtle">
-                Placeholder · Portrait d&apos;Artem à venir
-              </div>
             </div>
           </AnimateOnScroll>
 
