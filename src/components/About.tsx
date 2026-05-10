@@ -32,7 +32,7 @@ export default function About() {
             <div className="relative aspect-[4/5] max-w-md bg-gray-200 overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/photos/artem-portrait.jpg"
+                src="/photos/artem-portrait.png"
                 alt="Artem Bormin, fondateur de Bormin Rénovation, devant le Lac Léman"
                 className="w-full h-full object-cover"
                 loading="lazy"
