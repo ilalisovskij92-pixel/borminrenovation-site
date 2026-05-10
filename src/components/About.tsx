@@ -32,10 +32,12 @@ export default function About() {
             <div className="relative aspect-[4/5] max-w-md bg-gray-200 overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/photos/artem-portrait.png"
+                src="/photos/artem-portrait.jpg"
                 alt="Artem Bormin, fondateur de Bormin Rénovation, devant le Lac Léman"
                 className="w-full h-full object-cover"
                 loading="lazy"
+                width="1200"
+                height="1542"
               />
             </div>
           </AnimateOnScroll>
@@ -103,6 +105,23 @@ export default function About() {
                     <div className="font-medium text-ink">{title}</div>
                   </div>
                 ))}
+              </div>
+            </AnimateOnScroll>
+
+            {/* Garantie strip — standard CH conditions per art. 367 CO */}
+            <AnimateOnScroll delay={250}>
+              <div className="mt-10 border border-line bg-bg/60 p-6 max-w-xl">
+                <div className="font-mono text-[0.7rem] uppercase tracking-[0.15em] text-ink-muted mb-3">
+                  Garantie
+                </div>
+                <p className="text-ink-soft leading-relaxed text-base">
+                  <strong className="text-ink font-medium">5 ans</strong>{" "}
+                  sur le gros œuvre,{" "}
+                  <strong className="text-ink font-medium">2 ans</strong>{" "}
+                  sur les finitions — conformément au Code des obligations
+                  suisse (art. 367 CO). Chaque chantier est suivi
+                  personnellement par Artem.
+                </p>
               </div>
             </AnimateOnScroll>
           </div>
