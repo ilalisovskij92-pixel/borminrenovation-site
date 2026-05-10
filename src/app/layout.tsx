@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -85,16 +85,45 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-    ],
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
+  manifest: "/manifest.json",
   alternates: {
     canonical: siteUrl,
   },
+  appleWebApp: {
+    capable: true,
+    title: "Bormin Rénovation",
+    statusBarStyle: "default",
+  },
+  formatDetection: {
+    telephone: false, // we render +41 76 ... ourselves; keep iOS Safari from over-styling
+    email: false,
+    address: false,
+    date: false,
+    url: false,
+  },
+  // Local-business geo (helps Vevey / canton Vaud Maps + local search)
+  other: {
+    "geo.region": "CH-VD",
+    "geo.placename": "Vevey",
+    "geo.position": "46.4630;6.8401",
+    ICBM: "46.4630, 6.8401",
+  },
+};
+
+// Viewport + theme-colour (Next.js 15 separate export)
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
+  colorScheme: "light",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#FAFAF9" },
+    { media: "(prefers-color-scheme: dark)", color: "#2E2F38" },
+  ],
 };
 
 export default function RootLayout({
@@ -106,50 +135,91 @@ export default function RootLayout({
       className={`${inter.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}
     >
       <body>
-        {/* JSON-LD — Schema.org LocalBusiness for SEO + Google Business Profile alignment */}
+        {/* Skip-link for keyboard / screen-reader navigation (WCAG 2.4.1) */}
+        <a
+          href="#hero"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-ink focus:text-bg focus:px-4 focus:py-2 focus:outline-2 focus:outline-accent"
+        >
+          Aller au contenu
+        </a>
+
+        {/* JSON-LD — LocalBusiness + Person + Service for rich SEO results */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "@id": siteUrl,
-              name: "Bormin Rénovation",
-              alternateName: "Artem Bormin Construction",
-              description: siteDescription,
-              url: siteUrl,
-              telephone: "+41765314652",
-              priceRange: "$$",
-              image: `${siteUrl}/og-image.jpg`,
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Rue du Clos 8",
-                postalCode: "1800",
-                addressLocality: "Vevey",
-                addressRegion: "VD",
-                addressCountry: "CH",
-              },
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: 46.4630,
-                longitude: 6.8401,
-              },
-              areaServed: [
-                { "@type": "City", name: "Vevey" },
-                { "@type": "City", name: "Lausanne" },
-                { "@type": "City", name: "Morges" },
-                { "@type": "City", name: "Montreux" },
-                { "@type": "AdministrativeArea", name: "Suisse romande" },
-              ],
-              founder: {
-                "@type": "Person",
-                name: "Artem Bormin",
-              },
-              foundingDate: "2009",
-              knowsLanguage: ["fr", "en", "ru", "uk"],
-              sameAs: [
-                "https://facebook.com/borminrenovation",
-                "https://g.page/r/CV-nXy7PSi1UEAI",
+              "@graph": [
+                {
+                  "@type": "LocalBusiness",
+                  "@id": `${siteUrl}/#business`,
+                  name: "Bormin Rénovation",
+                  alternateName: "Artem Bormin Construction",
+                  description: siteDescription,
+                  url: siteUrl,
+                  telephone: "+41765314652",
+                  priceRange: "$$",
+                  image: `${siteUrl}/og-image.jpg`,
+                  logo: `${siteUrl}/logo.svg`,
+                  address: {
+                    "@type": "PostalAddress",
+                    streetAddress: "Rue du Clos 8",
+                    postalCode: "1800",
+                    addressLocality: "Vevey",
+                    addressRegion: "VD",
+                    addressCountry: "CH",
+                  },
+                  geo: {
+                    "@type": "GeoCoordinates",
+                    latitude: 46.463,
+                    longitude: 6.8401,
+                  },
+                  areaServed: [
+                    { "@type": "City", name: "Vevey" },
+                    { "@type": "City", name: "Lausanne" },
+                    { "@type": "City", name: "Morges" },
+                    { "@type": "City", name: "Montreux" },
+                    { "@type": "AdministrativeArea", name: "Suisse romande" },
+                  ],
+                  founder: { "@id": `${siteUrl}/#founder` },
+                  foundingDate: "2009",
+                  knowsLanguage: ["fr", "en", "ru", "uk"],
+                  sameAs: [
+                    "https://facebook.com/borminrenovation",
+                    "https://g.page/r/CV-nXy7PSi1UEAI",
+                  ],
+                  hasOfferCatalog: {
+                    "@type": "OfferCatalog",
+                    name: "Services Bormin Rénovation",
+                    itemListElement: [
+                      "Rénovation clé en main",
+                      "Plomberie",
+                      "Menuiserie & fenêtres",
+                      "Maçonnerie",
+                      "Carrelage & sols",
+                      "Peinture & finitions",
+                    ].map((s) => ({
+                      "@type": "Offer",
+                      itemOffered: { "@type": "Service", name: s },
+                    })),
+                  },
+                },
+                {
+                  "@type": "Person",
+                  "@id": `${siteUrl}/#founder`,
+                  name: "Artem Bormin",
+                  jobTitle: "Fondateur · Artisan",
+                  worksFor: { "@id": `${siteUrl}/#business` },
+                  knowsLanguage: ["fr", "en", "ru", "uk"],
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": `${siteUrl}/#website`,
+                  url: siteUrl,
+                  name: siteName,
+                  inLanguage: "fr",
+                  publisher: { "@id": `${siteUrl}/#business` },
+                },
               ],
             }),
           }}

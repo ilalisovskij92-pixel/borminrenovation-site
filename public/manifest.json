@@ -1,0 +1,27 @@
+{
+  "name": "Bormin Rénovation — Construction & Rénovation",
+  "short_name": "Bormin Rénovation",
+  "description": "Construction & rénovation tous corps de métier en Suisse romande. 17 ans d'expérience.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#FAFAF9",
+  "theme_color": "#2E2F38",
+  "scope": "/",
+  "lang": "fr",
+  "categories": ["business", "construction", "productivity"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
