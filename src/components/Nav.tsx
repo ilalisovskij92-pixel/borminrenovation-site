@@ -61,12 +61,9 @@ export default function Nav() {
           </ul>
 
           {/* Centered brand — official Bormin Rénovation logo */}
-          <Logo
-            href="/"
-            width={170}
-            height={56}
-            className="lg:flex-1 lg:justify-center"
-          />
+          <div className="lg:flex-1 lg:flex lg:justify-center">
+            <Logo href="/" width={160} />
+          </div>
 
           {/* Right menu + lang + CTA — desktop */}
           <div className="hidden lg:flex items-center gap-8 flex-1 justify-end">

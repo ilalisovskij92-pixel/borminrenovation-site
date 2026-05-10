@@ -25,7 +25,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-5">
             <div className="mb-6">
-              <Logo href="/" width={200} height={66} inverted />
+              <Logo href="/" width={200} inverted />
             </div>
             <p className="text-bg/60 max-w-sm leading-relaxed text-sm mb-6">
               Construction & rénovation tous corps de métier en Suisse romande.
