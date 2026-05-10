@@ -79,11 +79,7 @@ export default function Nav() {
                 </li>
               ))}
             </ul>
-            <div className="flex gap-2 items-center font-mono text-xs text-ink-muted border-l border-line pl-6">
-              <span className="text-ink font-medium">FR</span>
-              <span>·</span>
-              <Link href="/en" className="hover:text-accent">EN</Link>
-            </div>
+            {/* EN version is on the roadmap (Phase 3) — switcher hidden until /en exists */}
             <Link
               href="#contact"
               className="btn-pill btn-primary text-[0.7rem] tracking-wider uppercase py-3 px-5"
