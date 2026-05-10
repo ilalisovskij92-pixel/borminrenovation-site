@@ -80,20 +80,17 @@ export default function Hero() {
           </AnimateOnScroll>
         </div>
 
-        {/* Visual column — featured chantier or atmospheric photo */}
-        <div className="lg:col-span-5 order-1 lg:order-2">
+        {/* Visual column — signature shaker kitchen, vertical 3:4 fits hero frame */}
+        <div className="lg:col-span-5 order-2 lg:order-2">
           <AnimateOnScroll delay={150} className="relative">
             <div className="relative aspect-[4/5] max-w-md mx-auto lg:ml-auto lg:mr-0 bg-gray-100 overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&q=85"
-                alt="Chantier de rénovation par Bormin Rénovation"
+                src="/photos/realisations/03-cuisine-shaker.jpg"
+                alt="Cuisine shaker beige avec carrelage métro — réalisation Bormin Rénovation"
                 className="w-full h-full object-cover"
                 loading="eager"
               />
-              <div className="absolute -bottom-8 right-0 text-[0.65rem] uppercase tracking-[0.15em] font-mono text-ink-subtle">
-                Placeholder · Photos d&apos;Artem à venir
-              </div>
             </div>
           </AnimateOnScroll>
         </div>
