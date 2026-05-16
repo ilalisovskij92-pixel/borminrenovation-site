@@ -26,7 +26,7 @@ export default function Process() {
       <div className="container-premium">
         <AnimateOnScroll className="grid lg:grid-cols-12 gap-12 lg:items-end mb-20 pb-8 border-b border-line">
           <div className="lg:col-span-3">
-            <span className="eyebrow">(03) — Méthode</span>
+            <span className="eyebrow">(04) — Méthode</span>
           </div>
           <h2
             id="process-heading"

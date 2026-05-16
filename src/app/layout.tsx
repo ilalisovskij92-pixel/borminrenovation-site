@@ -186,6 +186,28 @@ export default function RootLayout({
                   founder: { "@id": `${siteUrl}/#founder` },
                   foundingDate: "2009",
                   knowsLanguage: ["fr", "en", "ru", "uk"],
+                  currenciesAccepted: "CHF",
+                  paymentAccepted: "Virement bancaire, TWINT, Espèces",
+                  openingHoursSpecification: [
+                    {
+                      "@type": "OpeningHoursSpecification",
+                      dayOfWeek: [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                      ],
+                      opens: "08:00",
+                      closes: "18:00",
+                    },
+                    {
+                      "@type": "OpeningHoursSpecification",
+                      dayOfWeek: "Saturday",
+                      opens: "09:00",
+                      closes: "13:00",
+                    },
+                  ],
                   sameAs: [
                     "https://facebook.com/borminrenovation",
                     "https://g.page/r/CV-nXy7PSi1UEAI",
@@ -194,15 +216,57 @@ export default function RootLayout({
                     "@type": "OfferCatalog",
                     name: "Services Bormin Rénovation",
                     itemListElement: [
-                      "Rénovation clé en main",
-                      "Plomberie",
-                      "Menuiserie & fenêtres",
-                      "Maçonnerie",
-                      "Carrelage & sols",
-                      "Peinture & finitions",
+                      {
+                        name: "Rénovation clé en main",
+                        description:
+                          "Rénovation complète d'appartement ou de maison à Vevey, Lausanne, Morges et dans tout le canton de Vaud. Démolition, plomberie, électricité, finitions, coordination des corps de métier.",
+                        serviceType: "Rénovation complète",
+                      },
+                      {
+                        name: "Plomberie",
+                        description:
+                          "Installation, dépannage et raccordements pour salles de bain, cuisines et chauffage. Interventions d'urgence en Suisse romande.",
+                        serviceType: "Plomberie",
+                      },
+                      {
+                        name: "Menuiserie & fenêtres",
+                        description:
+                          "Pose et remplacement de portes, fenêtres, escaliers et agencements sur mesure.",
+                        serviceType: "Menuiserie",
+                      },
+                      {
+                        name: "Maçonnerie",
+                        description:
+                          "Gros œuvre, cloisons, ouvertures, modifications structurelles. Murs porteurs et permis communaux.",
+                        serviceType: "Maçonnerie",
+                      },
+                      {
+                        name: "Carrelage & sols",
+                        description:
+                          "Carrelage pour salles de bain et cuisines, pose de parquet, stratifié et sols coulés.",
+                        serviceType: "Carrelage",
+                      },
+                      {
+                        name: "Peinture & finitions",
+                        description:
+                          "Peinture intérieure et extérieure, plâtrerie, effets décoratifs pour particuliers et commerces.",
+                        serviceType: "Peinture",
+                      },
                     ].map((s) => ({
                       "@type": "Offer",
-                      itemOffered: { "@type": "Service", name: s },
+                      itemOffered: {
+                        "@type": "Service",
+                        name: s.name,
+                        description: s.description,
+                        serviceType: s.serviceType,
+                        provider: { "@id": `${siteUrl}/#business` },
+                        areaServed: [
+                          { "@type": "City", name: "Vevey" },
+                          { "@type": "City", name: "Lausanne" },
+                          { "@type": "City", name: "Morges" },
+                          { "@type": "City", name: "Montreux" },
+                        ],
+                      },
                     })),
                   },
                 },

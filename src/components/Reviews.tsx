@@ -20,7 +20,7 @@ export default function Reviews() {
       <div className="container-premium">
         <AnimateOnScroll className="max-w-3xl mx-auto text-center">
           <span className="font-mono text-[0.7rem] uppercase tracking-[0.25em] text-accent mb-6 block">
-            (04) — Témoignages
+            (05) — Témoignages
           </span>
 
           <h2

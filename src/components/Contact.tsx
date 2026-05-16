@@ -62,7 +62,7 @@ export default function Contact() {
       <div className="container-premium">
         <AnimateOnScroll className="grid lg:grid-cols-12 gap-12 lg:items-end mb-20 pb-8 border-b border-line">
           <div className="lg:col-span-3">
-            <span className="eyebrow">(04) — Contact</span>
+            <span className="eyebrow">(07) — Contact</span>
           </div>
           <h2
             id="contact-heading"

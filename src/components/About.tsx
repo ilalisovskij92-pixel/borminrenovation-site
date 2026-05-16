@@ -13,7 +13,7 @@ export default function About() {
       <div className="container-premium">
         <AnimateOnScroll className="grid lg:grid-cols-12 gap-12 lg:items-end mb-20 pb-8 border-b border-line">
           <div className="lg:col-span-3">
-            <span className="eyebrow">(02) — À propos</span>
+            <span className="eyebrow">(03) — À propos</span>
           </div>
           <h2
             id="about-heading"
