@@ -10,11 +10,11 @@ type QA = { q: string; a: string };
 const faqs: QA[] = [
   {
     q: "Combien coûte une rénovation d'appartement dans le canton de Vaud ?",
-    a: "Le prix dépend de la surface, de l'état initial du logement et des matériaux choisis. À titre indicatif, une rénovation de salle de bain commence autour de 12'000 CHF, une cuisine sur mesure autour de 18'000 CHF, et une rénovation complète d'un appartement se situe entre 1'500 et 3'000 CHF/m². Je remets un devis détaillé, ligne par ligne, après une visite gratuite à votre domicile.",
+    a: "Le prix dépend de la surface, de l'état initial du logement, des matériaux choisis et de l'ampleur des travaux — chaque chantier est unique. Je remets un devis détaillé, ligne par ligne, après une visite gratuite à votre domicile. Prix fixé à l'avance dans le contrat, pas de surprise en cours de chantier.",
   },
   {
     q: "Combien de temps prend une rénovation de salle de bain ou de cuisine ?",
-    a: "Une rénovation complète de salle de bain prend en général entre 2 et 4 semaines (démolition, plomberie, électricité, carrelage, finitions). Pour une cuisine, compter 3 à 5 semaines. Les délais sont fixés à l'avance dans le contrat et respectés — c'est l'engagement principal.",
+    a: "Le délai dépend de l'ampleur du projet : démolition, plomberie, électricité, carrelage et finitions s'enchaînent dans un ordre précis. Les dates de début et de fin sont fixées dans le contrat à l'avance, et respectées — c'est l'engagement principal du chantier.",
   },
   {
     q: "Travaillez-vous uniquement à Vevey ou dans toute la Suisse romande ?",
@@ -34,7 +34,7 @@ const faqs: QA[] = [
   },
   {
     q: "Travaillez-vous en urgence pour des dépannages ?",
-    a: "Oui — pour les urgences de plomberie ou d'électricité dans la région Vevey-Montreux-Lausanne, contactez-moi directement par WhatsApp ou téléphone au +41 76 531 46 52. Intervention sous 24-48h selon disponibilité.",
+    a: "Pour les urgences de plomberie ou d'électricité, contactez-moi directement par WhatsApp ou téléphone au +41 76 531 46 52. J'évalue rapidement et je vous donne un créneau réaliste selon les chantiers en cours.",
   },
   {
     q: "Pourquoi choisir un artisan indépendant plutôt qu'une grande entreprise ?",
